@@ -36,6 +36,7 @@ public class Coin {
     private double atl;
     private double atlChangePercentage;
     private LocalDateTime atlDate;
+    @JsonIgnore
     private String roi;
     private LocalDateTime lastUpdated;
 }

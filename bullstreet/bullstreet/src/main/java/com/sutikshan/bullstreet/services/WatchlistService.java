@@ -6,11 +6,11 @@ import com.sutikshan.bullstreet.models.Watchlist;
 
 public interface WatchlistService {
 
-    Watchlist findUserWatchList(String userId);
+    Watchlist findUserWatchList(String userId) throws Exception;
 
     Watchlist createWatchlist(User user);
 
-    Watchlist findById(Long id);
+    Watchlist findById(String id) throws Exception;
 
-    Coin addItemToWatchlist(Coin coin, User user);
+    Coin addItemToWatchlist(Coin coin, User user) throws Exception;
 }

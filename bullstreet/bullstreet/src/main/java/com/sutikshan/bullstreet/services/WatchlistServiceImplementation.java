@@ -7,6 +7,8 @@ import com.sutikshan.bullstreet.repositories.WatchlistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class WatchlistServiceImplementation implements WatchlistService {
 
@@ -14,23 +16,39 @@ public class WatchlistServiceImplementation implements WatchlistService {
     private WatchlistRepository watchlistRepository;
 
     @Override
-    public Watchlist findUserWatchList(String userId) {
-        Watchlist watchlist =
-        return null;
+    public Watchlist findUserWatchList(String userId) throws Exception {
+        Watchlist watchlist=watchlistRepository.findByUserId(userId);
+        if(watchlist==null){
+            throw new Exception("watchlist not found");
+        }
+        return watchlist;
     }
 
     @Override
     public Watchlist createWatchlist(User user) {
-        return null;
+        Watchlist watchlist=new Watchlist();
+        watchlist.setUser(user);
+        return watchlistRepository.save(watchlist);
     }
 
     @Override
-    public Watchlist findById(Long id) {
-        return null;
+    public Watchlist findById(String id) throws Exception {
+        Optional<Watchlist> optionalWatchlist = watchlistRepository.findById(id);
+        if(optionalWatchlist.isEmpty()){
+            throw new Exception("watch list not found");
+        }
+        return optionalWatchlist.get();
     }
 
     @Override
-    public Coin addItemToWatchlist(Coin coin, User user) {
-        return null;
+    public Coin addItemToWatchlist(Coin coin, User user) throws Exception {
+        Watchlist watchlist=findUserWatchList(user.getId());
+
+        if(watchlist.getCoins().contains(coin)){
+            watchlist.getCoins().remove(coin);
+        }
+        else watchlist.getCoins().add(coin);
+        watchlistRepository.save(watchlist);
+        return coin;
     }
 }
