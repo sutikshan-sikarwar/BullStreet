@@ -18,6 +18,5 @@ public class Watchlist {
     @DBRef
     private User user;
 
-    @DBRef
     private List<Coin> coins = new ArrayList<>();
 }

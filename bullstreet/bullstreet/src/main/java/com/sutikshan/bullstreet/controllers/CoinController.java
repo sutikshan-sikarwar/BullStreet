@@ -1,5 +1,6 @@
 package com.sutikshan.bullstreet.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sutikshan.bullstreet.models.Coin;
@@ -34,10 +35,14 @@ public class CoinController {
         JsonNode jsonNode = objectMapper.readTree(res);
         return new ResponseEntity<>(jsonNode, HttpStatus.ACCEPTED);
     }
+
     @GetMapping("/details/{coinId}")
-    ResponseEntity<Coin> getCoinDetails(@PathVariable String coinId) throws Exception {
-        Coin coin = coinService.findById(coinId);
-        return new ResponseEntity<>(coin, HttpStatus.OK);
+    ResponseEntity<JsonNode> getCoinDetails(@PathVariable String coinId) throws Exception {
+        String coin=coinService.getCoinDetails(coinId);
+        JsonNode jsonNode = objectMapper.readTree(coin);
+
+        return ResponseEntity.ok(jsonNode);
+
     }
 
     @GetMapping("/search")
@@ -54,9 +59,9 @@ public class CoinController {
         return new ResponseEntity<>(jsonNode, HttpStatus.OK);
     }
 
-    @GetMapping("/trading")
+    @GetMapping("/trending")
     ResponseEntity<JsonNode> getTradingCoins() throws Exception {
-        String res = coinService.getTradingCoins();
+        String res = coinService.getTrendingCoins();
         JsonNode jsonNode = objectMapper.readTree(res);
         return new ResponseEntity<>(jsonNode, HttpStatus.OK);
     }

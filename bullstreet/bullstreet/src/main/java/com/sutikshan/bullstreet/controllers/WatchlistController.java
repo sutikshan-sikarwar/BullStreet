@@ -49,7 +49,7 @@ public class WatchlistController {
             @RequestHeader("Authorization") String jwt,
             @PathVariable String coinId) throws Exception {
 
-
+        System.out.println("Adding coin with ID: " + coinId);
         User user=userService.findUserByJwt(jwt);
         Coin coin=coinService.findById(coinId);
         Coin addedCoin = watchlistService.addItemToWatchlist(coin, user);

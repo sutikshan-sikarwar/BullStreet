@@ -8,6 +8,7 @@ import com.sutikshan.bullstreet.response.AuthResponse;
 import com.sutikshan.bullstreet.services.CustomUserDetailsService;
 import com.sutikshan.bullstreet.services.EmailService;
 import com.sutikshan.bullstreet.services.TwoFactorOTPService;
+import com.sutikshan.bullstreet.services.WatchlistService;
 import com.sutikshan.bullstreet.utils.OTPUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,9 @@ public class AuthController {
     @Autowired
     private TwoFactorOTPService twoFactorOTPService;
 
+    @Autowired
+    private WatchlistService watchlistService;
+
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse> register (@RequestBody User user) throws Exception {
 
@@ -49,6 +53,8 @@ public class AuthController {
         newUser.setPassword(user.getPassword());
 
         User savedUser = userRepository.save(newUser);
+
+        watchlistService.createWatchlist(savedUser);
 
         Authentication auth = new UsernamePasswordAuthenticationToken(user.getEmail(),user.getPassword());
 
