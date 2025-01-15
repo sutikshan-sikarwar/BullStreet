@@ -69,4 +69,4 @@ export const getUserAssets = (jwt) => async (dispatch) => {
     });
   }
 };
-``;
+
