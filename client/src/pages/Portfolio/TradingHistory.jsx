@@ -25,7 +25,7 @@ import {
   import { calculateProfite } from "@/Util/calculateProfite";
   import { readableDate } from "@/Util/readableDate";
   
-  const TreadingHistory = () => {
+  const TradingHistory = () => {
     const dispatch = useDispatch();
     const [currentTab, setCurrentTab] = useState("portfolio");
     const { asset, order } = useSelector((store) => store);
@@ -95,5 +95,5 @@ import {
     );
   };
   
-  export default TreadingHistory;
+  export default TradingHistory;
   
