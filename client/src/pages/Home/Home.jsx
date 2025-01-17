@@ -38,6 +38,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { sendMessage } from "@/Redux/Chat/Action";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import SpinnerBackdrop from "@/components/custome/SpinnerBackdrop";
+import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -107,6 +108,7 @@ const Home = () => {
 
   return (
     <div className="relative">
+      <Navbar/>
       <div className="lg:flex ">
         <div className="lg:w-[50%] border-r">
           <div className="p-3 flex items-center gap-4 ">

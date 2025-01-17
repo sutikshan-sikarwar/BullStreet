@@ -52,8 +52,8 @@ const Navbar = () => {
                       <AvatarImage src="https://cdn.pixabay.com/photo/2021/04/30/16/47/binance-logo-6219389_1280.png" />
                     </Avatar>
                     <div>
-                      <span className="font-bold text-orange-700">Zosh</span>
-                      <span>Tread</span>
+                      <span className="font-bold text-orange-700">Bull</span>
+                      <span>Street</span>
                     </div>
                   </div>
                 </SheetTitle>
@@ -64,15 +64,15 @@ const Navbar = () => {
 
           <p
             onClick={() => navigate("/")}
-            className="text-sm lg:text-base cursor-pointer"
+            className="text-lg lg:text-xl cursor-pointer"
           >
-            Zosh Treading
+            BullStreet
           </p>
           <div className="p-0 ml-9">
             <Button
               variant="outline"
               onClick={() => navigate("/search")}
-              className="flex items-center gap-3"
+              className="flex w-36 items-center gap-4"
             >
               {" "}
               <MagnifyingGlassIcon className="left-2 top-3 " />

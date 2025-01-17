@@ -25,7 +25,7 @@ public class CoinController {
     @GetMapping
     ResponseEntity<List<Coin>> getCoinList(@RequestParam(required = false, defaultValue = "0", name="page") int page) throws Exception {
         List<Coin> coins = coinService.getCoinList(page);
-        return new ResponseEntity<>(coins, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(coins, HttpStatus.OK);
     }
 
     @GetMapping("/{coinId}/chart")
