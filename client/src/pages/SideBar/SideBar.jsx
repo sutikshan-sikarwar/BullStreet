@@ -71,7 +71,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className="mt-10 space-y-5">
+    <div className="mt-6 space-y-5">
       {menu.map((item) => (
         <div key={item} className="">
           <SheetClose className="w-full">

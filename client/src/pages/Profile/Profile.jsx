@@ -42,33 +42,33 @@ const Profile = () => {
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">Full Name : </p>
-                  <p className="text-gray-500">{"code with zosh"} </p>
+                  <p className="text-gray-500">{"Sutikshan Sikarwar"} </p>
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">Date Of Birth : </p>
-                  <p className="text-gray-500">{"25/09/2000"} </p>
+                  <p className="text-gray-500">{"12/09/2003"} </p>
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">Nationality : </p>
-                  <p className="text-gray-500">{"indian"} </p>
+                  <p className="text-gray-500">{"Indian"} </p>
                 </div>
               </div>
               <div className="space-y-7">
                 <div className="flex">
                   <p className="w-[9rem]">Address : </p>
-                  <p className="text-gray-500">{"code with zosh"} </p>
+                  <p className="text-gray-500">{"Azad Nagar street 1, Morar"} </p>
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">City : </p>
-                  <p className="text-gray-500">{"mumbai"} </p>
+                  <p className="text-gray-500">{"Gwalior"} </p>
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">Postcode : </p>
-                  <p className="text-gray-500">{345020} </p>
+                  <p className="text-gray-500">{474006} </p>
                 </div>
                 <div className="flex">
                   <p className="w-[9rem]">Country : </p>
-                  <p className="text-gray-500">{"india"} </p>
+                  <p className="text-gray-500">{"India"} </p>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@ const Profile = () => {
               </div>
               <div className="flex items-center">
                 <p className="w-[8rem]">Mobile :</p>
-                <p>+918987667899</p>
+                <p>+917772816914</p>
               </div>
               <div>
                 <Dialog>

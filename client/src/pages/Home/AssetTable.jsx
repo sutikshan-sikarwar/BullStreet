@@ -342,18 +342,18 @@ export function AssetTable({ coins, category }) {
                 <span> {item.name}</span>
               </TableCell>
               <TableCell>{item.symbol.toUpperCase()}</TableCell>
-              <TableCell>{item.totalVolume}</TableCell>
-              <TableCell>{item.marketCap}</TableCell>
+              <TableCell>{item.total_volume}</TableCell>
+              <TableCell>{item.market_cap}</TableCell>
               <TableCell
                 className={`${
-                  item.marketCapChangePercentage24h < 0
+                  item.market_cap_change_percentage_24h < 0
                     ? "text-red-600"
                     : "text-green-600"
                 }`}
               >
-                {item.marketCapChangePercentage24h}%
+                {item.market_cap_change_percentage_24h}%
               </TableCell>
-              <TableCell className="text-right px-4">{item.currentPrice}</TableCell>
+              <TableCell className="text-right px-4">{item.current_price}</TableCell>
 
               {/* market_cap_change_percentage_24h */}
             </TableRow>
